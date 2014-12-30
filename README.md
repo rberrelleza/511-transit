@@ -15,7 +15,7 @@ route = Route(token, "SF-MUNI", "45-Union Stockton", "45", True)
 stop = Stop(token, "Union St and Buchanan St", "17056")
 departures = stop.next_departures(route.code, "Outbound")
 print "{} Outbound will arrive to {} in {} minutes".format(route.code, stop.name, departures.times[0])
-# 45 Outbound will to Unition St and Buchanan St in 5 minutes
+# 45 Outbound will to Union St and Buchanan St in 5 minutes
 ```
 
 * See the tests/test_integration.py for other usages.
