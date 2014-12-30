@@ -17,7 +17,7 @@ setup(
     license='MIT',
     author='Ramiro Berrelleza',
     author_email='rberrelleza@gmail.com',
-    description='A very useful module',
+    description='A python API to consume transit data from http://511.org. ',
     packages=['fiveoneone'],
     include_package_data=True,
     zip_safe=False,

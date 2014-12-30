@@ -1,6 +1,3 @@
-import requests
-from xml.etree import ElementTree
-
 from model import Model
 from departure import Departure
 
@@ -30,10 +27,7 @@ class Stop(Model):
 		return "{name} | {code} ".format(name=self.name, code=self.code)	
 	
 	def next_departures(self, route_code, direction=None):
-		response = requests.get("http://services.my511.org/Transit2.0/GetNextDeparturesByStopCode.aspx?token={token}&stopCode={code}".format(token=self.token, code=self.code))
-		response.raise_for_status()
-		tree = ElementTree.fromstring(response.content)
-	
+		tree = self.get("GetNextDeparturesByStopCode.aspx", dict(stopCode=self.code))
 		departure = Departure(route_code, self.code, direction)
 
 		for route in tree[0][0][0]:

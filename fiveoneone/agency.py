@@ -1,6 +1,3 @@
-import requests
-from xml.etree import ElementTree
-
 from model import Model
 from route import Route
 
@@ -36,11 +33,7 @@ class Agency(Model):
 	    self._mode = value
 	
 	def routes(self):
-		response = requests.get(
-			'http://services.my511.org/Transit2.0/GetRoutesForAgency.aspx?token={token}&agencyName={agency}'.format(
-				token=self.token, agency=self.name))
-		response.raise_for_status()
-		tree = ElementTree.fromstring(response.content)
+		tree = self.get("GetRoutesForAgency.aspx", {"agencyName": self.name})
 		routes = []
 		for route in tree[0][0][0].getchildren():
 			assert(route.tag.lower() == "route")
@@ -56,9 +49,7 @@ class Agency(Model):
 		if not token:
 			raise ValueError("Must provide a valid 511.org token")
 
-		response = requests.get('http://services.my511.org/Transit2.0/GetAgencies.aspx?token={token}'.format(token=token))
-		response.raise_for_status()
-		tree = ElementTree.fromstring(response.content)
+		tree = Model(token).get('GetAgencies.aspx')
 		agencies = []
 		for agency in tree[0].getchildren():
 			assert(agency.tag.lower() == "agency")
