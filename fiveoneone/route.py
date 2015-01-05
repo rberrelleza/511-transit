@@ -52,7 +52,7 @@ class Route(Model):
 	def stops(self, direction=None):
 		if self.direction:
 			if direction not in [self.INBOUND, self.OUTBOUND]:
-				raise ValueError("direction must be either {inboud} or {outbound}".format(inbound=INBOUND, outbound=OUTBOUND))
+				raise ValueError("direction must be either {inbound} or {outbound}".format(inbound=self.INBOUND, outbound=self.OUTBOUND))
 
 			routeIDF="{agency}~{code}~{direction}".format(token=self.token, agency=self.agency, code=self.code, direction=direction)
 		else:
