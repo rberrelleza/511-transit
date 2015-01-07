@@ -13,7 +13,7 @@ requirements = [str(ir.req) for ir in install_reqs]
  
 setup(
     name='fiveoneone',
-    version='0.2',
+    version='0.3.dev0',
     license='MIT',
     author='Ramiro Berrelleza',
     author_email='rberrelleza@gmail.com',
