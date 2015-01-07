@@ -13,11 +13,12 @@ requirements = [str(ir.req) for ir in install_reqs]
  
 setup(
     name='fiveoneone',
-    version='0.1',
+    version='0.2',
     license='MIT',
     author='Ramiro Berrelleza',
     author_email='rberrelleza@gmail.com',
-    description='A python API to consume transit data from http://511.org. ',
+    description='A python API to consume transit data from http://511.org.',
+    url='https://github.com/rberrelleza/511-transit',
     packages=['fiveoneone'],
     include_package_data=True,
     zip_safe=False,
