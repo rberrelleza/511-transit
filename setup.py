@@ -7,10 +7,9 @@ A python API to consume transit data from http://511.org.
 
 from setuptools import setup
 from pip.req import parse_requirements
- 
-install_reqs = parse_requirements("requirements.txt")
-requirements = [str(ir.req) for ir in install_reqs]
- 
+
+requirements = ("requests==2.5.1", )
+
 setup(
     name='fiveoneone',
     version='0.3.dev0',
