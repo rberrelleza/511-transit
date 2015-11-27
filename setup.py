@@ -1,8 +1,8 @@
 """
-Five One One 
+Five One One
 -------------
 
-A python API to consume transit data from http://511.org. 
+A python API to consume transit data from http://511.org.
 """
 
 from setuptools import setup
@@ -12,7 +12,7 @@ requirements = ("requests==2.5.1", )
 
 setup(
     name='fiveoneone',
-    version='0.3.dev0',
+    version='0.3',
     license='MIT',
     author='Ramiro Berrelleza',
     author_email='rberrelleza@gmail.com',
