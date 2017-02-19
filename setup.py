@@ -12,7 +12,7 @@ requirements = ("requests==2.5.1", )
 
 setup(
     name='fiveoneone',
-    version='0.4dev0',
+    version='0.4',
     license='MIT',
     author='Ramiro Berrelleza',
     author_email='rberrelleza@gmail.com',
