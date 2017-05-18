@@ -1,9 +1,9 @@
 import requests
-import urllib.parse
-import urllib.request, urllib.parse, urllib.error
+import urlparse
+import urllib
 from xml.etree import ElementTree
 
-from .exceptions import TransitServiceError, TokenRequired, InvalidToken, AgencyRequired, InvalidAgency, \
+from exceptions import TransitServiceError, TokenRequired, InvalidToken, AgencyRequired, InvalidAgency, \
 	InvalidRouteIDF, RouteIDFRequired, StopCodeRequired
 
 class Model(object):
@@ -59,7 +59,7 @@ class Model(object):
 
 	 	url = self._base_uri + "/" + relative_path.lstrip("/")
 	 	parameters["token"] = self.token
-	 	url = url + "?" + urllib.parse.urlencode(parameters)
+	 	url = url + "?" + urllib.urlencode(parameters)
 	 	response = requests.get(url)
 	 	response.raise_for_status()
 	 	tree = ElementTree.fromstring(response.content)

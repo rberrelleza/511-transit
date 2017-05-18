@@ -1,5 +1,5 @@
-from .model import Model
-from .departure import Departure
+from model import Model
+from departure import Departure
 
 class Stop(Model):
 	def __init__(self, token, name, code):

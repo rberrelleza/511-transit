@@ -1,5 +1,5 @@
-from .model import Model
-from .stop import Stop
+from model import Model
+from stop import Stop
 
 class Route(Model):
 
