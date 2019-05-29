@@ -1,5 +1,5 @@
-from .model import Model
-from .route import Route
+from model import Model
+from route import Route
 
 class Agency(Model):
 	def __init__(self, token, name, hasDirection, mode):
