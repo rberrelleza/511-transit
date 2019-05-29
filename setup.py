@@ -11,7 +11,7 @@ requirements = ("requests==2.22.0", )
 
 setup(
     name='fiveoneone',
-    version='0.5.dev0',
+    version='0.5.0',
     license='MIT',
     author='Ramiro Berrelleza',
     author_email='rberrelleza@gmail.com',
