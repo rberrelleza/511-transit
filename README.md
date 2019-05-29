@@ -11,7 +11,7 @@ from fiveoneone.route import Route
 from fiveoneone.stop import Stop
 
 token = "YOUR_DEVELOPER_TOKEN"
-route = Route(token, "SF-MUNI", "45-Union Stockton", "45", True)
+route = Route(token, "SFMTA", "45-Union Stockton", "45", True)
 stop = Stop(token, "Union St and Buchanan St", "17056")
 departures = stop.next_departures(route.code, "Outbound")
 print "{} Outbound will arrive to {} in {} minutes".format(route.code, stop.name, departures.times[0])
