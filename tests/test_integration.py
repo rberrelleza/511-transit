@@ -23,17 +23,17 @@ class TestAgency(unittest.TestCase):
 			self.assertIsNotNone(agency.name)
 			self.assertIsNotNone(agency.hasDirection)
 			self.assertIsNotNone(agency.mode)
-			if agency.name == "SF-MUNI":
+			if agency.name == "SFMTA":
 				found_muni = True
 		self.assertTrue(found_muni)
 
 	def test_routes(self):
-		agency = Agency(self.token, "SF-MUNI", "True", "Bus")
+		agency = Agency(self.token, "SFMTA", "True", "Bus")
 		routes = agency.routes()
 		self.assertIsNotNone(routes)
 
 	def test_stops(self):
-		route = Route(self.token, "SF-MUNI", "41-Union", "41", True)
+		route = Route(self.token, "SFMTA", "41-Union", "41", True)
 		stops = route.stops(Route.INBOUND)
 		self.assertIsNotNone(stops)
 		for s in stops:
@@ -47,7 +47,7 @@ class TestAgency(unittest.TestCase):
 			self.assertIsNotNone(s.code)	
 
 	def test_departures(self):
-		route = Route(self.token, "SF-MUNI", "45-Union Stockton", "45", True)
+		route = Route(self.token, "SFMTA", "45-Union Stockton", "45", True)
 		stop = Stop(self.token, "Union St and Buchanan St", "17056")
 		departures = stop.next_departures(route.code)
 		self.assertIsNotNone(departures)
