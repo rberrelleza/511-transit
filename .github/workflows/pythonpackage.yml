@@ -22,5 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.dev.txt
     - name: Test
+      env:
+          FIVEONEONE_TOKEN: ${{ secrets.FIVEONEONE_TOKEN }}
       run: |
         nosetests
