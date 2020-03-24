@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='fiveoneone',
-    version='0.5.1',
+    version='0.6.0',
     license='MIT',
     author='Ramiro Berrelleza',
     author_email='rberrelleza@gmail.com',
